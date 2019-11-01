@@ -1,9 +1,5 @@
-# segment_3D
 
-### Paper
-[Deep learning segmentation of optical microscopy images improves 3D neuron reconstruction](https://drive.google.com/open?id=1jWykhjOMP_WqxO5i4IBBEHorPztfCqfv)
-
-### 1. Setup the dependencies (MAC & Ubuntu)
+<!-- ### 1. Setup the dependencies (MAC & Ubuntu)
 To run ..., you need to install the following packages manually beforehand
 
 
@@ -27,8 +23,8 @@ To run ..., you need to install the following packages manually beforehand
 (torch36)$ pip install scikit-fmm==0.0.7
 
 ```
-
-### 2. Usage
+ -->
+<!-- ### 2. Usage
 
 **To train the model :**
 
@@ -36,10 +32,10 @@ To run ..., you need to install the following packages manually beforehand
 python train.py [-h] [--config [CONFIG]] 
 
 --config                Configuration file to use
-```
+``` -->
 
 
-**To test the model w.r.t. a dataset on custom images(s):**
+*<!-- *To test the model w.r.t. a dataset on custom images(s):**
 
 ```
 python test.py [-h] [--model_path [MODEL_PATH]] [--dataset [DATASET]]
@@ -55,28 +51,29 @@ python test.py [-h] [--model_path [MODEL_PATH]] [--dataset [DATASET]]
 **To visualize the loss using tensorboard:**
 ```
 tensorboard --logdir runs
-```
-
-
-**To organize your dataset:**
+``` -->
+<!-- **To organize your dataset:**
 ```
 dataset
   => sub-dataset1
     => images (store all your original optical images eg. TIFF file)
     => labels (TIFF file converted from swc file using distance transform preprocessing)
     => ground_truth (TIFF file converted from swc file without any preprocessing)
-  => sub-dataset2
-    => images
-    => labels
-    => ground_truth
-  => sub-dataset3
-    => images
-    => labels
-    => ground_truth
-  .....
-  => sub-dataset-n
-    => images
-    => labels
-    => ground_truth
-```
+ -->
 # Deep_Muscle_Segmentation
+### Paper
+TBC
+
+### 1. Setup the dependencies (MAC & Ubuntu)
+To run ..., you need to install the following packages manually beforehand
+
+
+* `scikit-image-0.12.3`
+* `tifffile-0.9.0`
+* `scipy`
+* `Cython`
+* `tensorboardX`
+* `pyyaml`
+* `tqdm`
+* `scikit-fmm==0.0.7`
+```
