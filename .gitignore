@@ -1,0 +1,5 @@
+*.pyc
+ptsemseg/models/__pycache__/*
+runs/*
+*.pdf
+ptsemseg/__pycache__/*

@@ -1,0 +1,57 @@
+id: 1
+model:
+    arch: fcn8s
+
+#    save_folder: '/media/jacktang/Work/USYD/Research/ISBI_2020/seg/'
+data:
+    dataset: thigh
+    compound: False
+    train_split: train
+    val_split: val
+    test_split: test
+    img_rows: 'same'
+    img_cols: 'same'
+    #path: '/Users/wonh/Desktop/fly-dataset/' # for mac
+    path: '/media/jacktang/Work/USYD/Research/2020_ISMRM/dataset/whole'
+training:
+    train_iters: 200 #200
+    batch_size: 4
+    patch_size: 256
+
+    cross_entropy_ratio: 0.003
+    val_interval: 1 #10
+    n_classes: 2
+    n_workers: 4
+    print_interval: 1
+    print_interval_per_batch: False
+    augmentations:
+      hflip: 0.5 # [0, 1)
+      vflip: 0.5 # [0, 1)
+#      iflip: 0.5 # [0, 1)
+      rotate: 180 # [-180, 180]
+#      aug1: 'par1'
+#      aug2: 'par2'
+    optimizer:
+        name: 'adam'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+#        momentum: 0.9
+    loss:
+#        name: 'cross_entropy2d'
+#        name: 'regression_l1'
+        name: dice
+        size_average: True
+    lr_schedule:
+        #name: 'poly_lr'
+        #max_iter: 400
+#    cp_save_path: '/media/jacktang/Work/USYD/Research/2020_ISMRM/segment_3D-master/'
+    resume:
+#    resume: fcn3d_fly_best_model.pkl # path to the model saved before
+#    resume: '/Users/wonh/y3s2/isbi/segment_3D/runs/fcn3d_fly/65461/fcn3dnet_flyJanelia_best_model.pkl' # for mac
+    #resume: '/home/heng/Desktop/Research/0920/segment_3D/runs/fcn3d_fly/87793/fcn3dnet_flyJanelia_best_model.pkl' # for ubuntu
+
+test:
+    batch_size: 4
+    n_workers: 4
+    cp_path : '/media/jacktang/Work/USYD/Research/2020_ISMRM/Deep_Muscle_Segmentation/runs/fcn8s/86630/fcn8s_thigh_model_best.pkl'
+    save: True
