@@ -26,32 +26,9 @@ To run ..., you need to install the following packages manually beforehand
  -->
 <!-- ### 2. Usage
 
-**To train the model :**
 
-```
-python train.py [-h] [--config [CONFIG]] 
+**To test the model w.r.t. a dataset on custom images(s):**
 
---config                Configuration file to use
-``` -->
-
-
-*<!-- *To test the model w.r.t. a dataset on custom images(s):**
-
-```
-python test.py [-h] [--model_path [MODEL_PATH]] [--dataset [DATASET]]
-               [--img_path [IMG_PATH]] [--out_path [OUT_PATH]]
- 
-  --model_path          Path to the saved model
-  --dataset             Dataset to use ['flyJanelia, camvid, ade20k etc']
-  --img_path            Path of the input image
-  --out_path            Path of the output segmap
-```
-
-
-**To visualize the loss using tensorboard:**
-```
-tensorboard --logdir runs
-``` -->
 <!-- **To organize your dataset:**
 ```
 dataset
