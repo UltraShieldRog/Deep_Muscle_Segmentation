@@ -13,6 +13,8 @@ def regression_l1(input, target, weight=None, size_average=True):
     # loss = nn.L1Loss(input, target, size_average=size_average)
     loss = nn.L1Loss(input, target)
     return loss
+
+
 def cross_entropy2d(input, target, weight=None, size_average=True):
     # print('input: ', input.size())
     # print('target: ', target.size())
@@ -30,12 +32,12 @@ def cross_entropy2d(input, target, weight=None, size_average=True):
         raise Exception("Only support upsampling")
 
     input = input.transpose(1, 2).transpose(2, 3).contiguous().view(-1, c)
-    target = target.view(-1)
+    target = target.view(-1).long()
     loss = F.cross_entropy(
         input, target, weight=weight, size_average=size_average, ignore_index=250
     )
 
-    print(type(loss))
+    # print(type(loss))
     return loss
 
 
@@ -192,21 +194,12 @@ class dice_loss(nn.Module):
         super().__init__()
 
     def forward(self, pred, target):
-#
-#         pred = pred.squeeze(dim=1)
-#         target = target.float()
-#
-#         # dice系数的定义
-#         dice = 2 * (pred * target).sum(dim=1).sum(dim=1).sum(dim=1) / (pred.pow(2).sum(dim=1).sum(dim=1).sum(dim=1) +
-#                                             target.pow(2).sum(dim=1).sum(dim=1).sum(dim=1) + 1e-5)
-#
-#         # 返回的是dice距离
-#         return (1 - dice).mean()
 
         smooth = 1.
 
 
         #iflat = pred.max(1)[1].view(-1).float()
+        # print(pred.size(), target.size())
         iflat = F.softmax(pred, dim=1)[:,1,:].contiguous().view(-1)
         tflat = target.view(-1).float()
         intersection = (iflat * tflat).sum().float()

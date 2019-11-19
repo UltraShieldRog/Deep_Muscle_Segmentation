@@ -239,9 +239,11 @@ class fcn16s(nn.Module):
         score = self.classifier(conv5)
         score_pool4 = self.score_pool4(conv4)
 
-        score = F.upsample(score, score_pool4.size()[2:])
+        # score = F.upsample(score, score_pool4.size()[2:])
+        score = F.interpolate(score, score_pool4.size()[2:])
         score += score_pool4
-        out = F.upsample(score, x.size()[2:])
+        # out = F.upsample(score, x.size()[2:])
+        out = F.interpolate(score, x.size()[2:])
 
         return out
 
@@ -354,7 +356,8 @@ class fcn32s(nn.Module):
 
         score = self.classifier(conv5)
 
-        out = F.upsample(score, x.size()[2:])
+        # out = F.upsample(score, x.size()[2:])
+        out = F.interpolate(score, x.size()[2:])
 
         return out
 

@@ -96,6 +96,9 @@ class ResNet34Unet(nn.Module):
         d3 = self.decoder3(torch.cat([d4, e2], 1))
         d2 = self.decoder2(torch.cat([d3, e1], 1))
         d1 = self.decoder1(torch.cat([d2, x], 1))
+        # print('e1', e1.size(), 'e2', e2.size(), 'e3', e3.size(), 'e4', e4.size())
+        # print('center', center.size())
+        # print('d1', d1.size(), 'd2', d2.size(), 'd3', d3.size(), 'd4', d4.size())
 
         f = self.finalconv(d1)
         return f
