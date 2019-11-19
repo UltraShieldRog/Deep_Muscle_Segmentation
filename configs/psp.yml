@@ -27,10 +27,8 @@ training:
     augmentations:
       hflip: 0.5 # [0, 1)
       vflip: 0.5 # [0, 1)
-#      iflip: 0.5 # [0, 1)
       rotate: 180 # [-180, 180]
-#      aug1: 'par1'
-#      aug2: 'par2'
+
     optimizer:
         name: 'adam'
         lr: 1.0e-3
@@ -48,5 +46,6 @@ training:
 test:
     batch_size: 4
     n_workers: 4
-    cp_path : '/media/jacktang/Work/USYD/Research/2020_ISMRM/segment_3D-master/runs/fcn32s/54848/fcn32s_thigh_model_best.pkl'
+#    cp_path : '/media/jacktang/Work/USYD/Research/2020_ISMRM/segment_3D-master/runs/fcn32s/54848/fcn32s_thigh_model_best.pkl'
+    cp_path:
     save: True

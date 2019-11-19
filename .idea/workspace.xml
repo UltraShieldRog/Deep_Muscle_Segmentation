@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="044085fe-56f1-4e9e-99df-cb7b63ad2afd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/configs/fcn32s.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/fcn32s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/atten_unet.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/fcn8s.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/psp.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/psp.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ptsemseg/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ptsemseg/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/res_atten_unet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/res_atten_unet.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,9 @@
     <option name="height" value="1924" />
   </component>
   <component name="ProjectId" id="1Tonf8KF4UmYOBJiAjRGJWCwKiE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/configs" />
   </component>
@@ -100,12 +103,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1d0c8c54-8de4-453e-ab3a-2c67ab93a513" name="Default Changelist" comment="" />
+      <changelist id="044085fe-56f1-4e9e-99df-cb7b63ad2afd" name="Default Changelist" comment="" />
       <created>1571292613571</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571292613571</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
