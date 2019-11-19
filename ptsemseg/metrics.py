@@ -90,14 +90,14 @@ class runningScore(object):
         # fwavacc = (freq[freq > 0] * iu[freq > 0]).sum()
         cls_iu = {1: tp/(tp+fn), 0: tn/(tn+fp)}
 
-        pix_auc = self.pix_auc / self.n
+        # pix_auc = self.pix_auc / self.n
 
         return (
             {
                 "Overall Acc: \t": acc,
                 "Mean Acc : \t": acc_cls,
                 # "FreqW Acc : \t": fwavacc,
-                "Pix Acc: \t": pix_auc,
+                # "Pix Acc: \t": pix_auc,
                 "IoU : \t": iu,
                 "Dice : \t": dice,
                 "Precision: \t": tp/(tp+fp),

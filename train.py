@@ -228,7 +228,8 @@ def train(cfg, writer, logger):
 
             if cfg['training']['loss']['name'] == 'dice':
                 loss = loss_fn(outputs, labels)
-                averageLoss += loss.out
+                # print('loss match: ', loss, loss.item())
+                averageLoss += loss.item()
             #
             else:
                 hard_loss = loss_fn(input=outputs, target=labels, weight=weight,

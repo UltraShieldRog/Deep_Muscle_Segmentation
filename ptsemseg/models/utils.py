@@ -397,6 +397,56 @@ class DecoderBlock(nn.Module):
         return x
 
 
+class DecoderBlock2(nn.Module):
+    def __init__(self,
+                 in_channels=512,
+                 n_filters=256,
+                 kernel_size=3,
+                 is_deconv=False,
+                 ):
+        super().__init__()
+
+        if kernel_size == 3:
+            conv_padding = 1
+        elif kernel_size == 1:
+            conv_padding = 0
+
+        # B, C, H, W -> B, C/4, H, W
+        self.conv1 = nn.Conv2d(in_channels,
+                               in_channels // 2,
+                               kernel_size,
+                               padding=1, bias=False)
+        self.norm1 = nn.BatchNorm2d(in_channels // 2)
+        self.relu1 = nn.ReLU(inplace=True)
+
+        # B, C/4, H, W -> B, C/4, H, W
+        if is_deconv == True:
+            self.deconv2 = nn.ConvTranspose2d(in_channels // 2,
+                                              in_channels // 2,
+                                              3,
+                                              stride=2,
+                                              padding=1,
+                                              output_padding=conv_padding, bias=False)
+        else:
+            self.deconv2 = nn.UpsamplingBilinear2d
+
+        self.norm2 = nn.BatchNorm2d(in_channels // 2)
+        self.relu2 = nn.ReLU(inplace=True)
+
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.norm1(x)
+        x = self.relu1(x)
+        x = self.deconv2(x)
+        x = self.norm2(x)
+        x = self.relu2(x)
+        # x = self.conv3(x)
+        # x = self.norm3(x)
+        # x = self.relu3(x)
+        return x
+
+
 def get_upsampling_weight(in_channels, out_channels, kernel_size):
     """Make a 2D bilinear kernel suitable for upsampling"""
     factor = (kernel_size + 1) // 2

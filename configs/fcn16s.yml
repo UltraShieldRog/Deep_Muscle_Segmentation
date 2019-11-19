@@ -43,5 +43,6 @@ training:
 test:
     batch_size: 4
     n_workers: 4
-    cp_path : '/media/jacktang/Work/USYD/Research/2020_ISMRM/Deep_Muscle_Segmentation/runs/fcn16s/3250/fcn16s_thigh_model_best.pkl'
+    cp_path : '/media/jacktang/Work/USYD/Research/2020_ISMRM/Deep_Muscle_Segmentation/runs/fcn16s/dice/fcn16s_thigh_model_best.pkl'
     save: True
+    nifti:

@@ -66,6 +66,7 @@ class unet(nn.Module):
         d5 = self.Up5(x5)
         # print('d5', d5.size(), 'x4', x4.size())
         if self.atten:
+            # print()
             x4 = self.Att5(g=d5, x=x4)
         d5 = torch.cat((x4, d5), dim=1)
         # print('cat d5', d5.size())

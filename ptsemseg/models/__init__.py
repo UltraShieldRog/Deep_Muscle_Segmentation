@@ -16,6 +16,7 @@ from ptsemseg.models.fcn import *
 from ptsemseg.models.unet import *
 from ptsemseg.models.pspnet import *
 from ptsemseg.models.resunet import  *
+from ptsemseg.models.res_attn_unet import*
 
 
 def get_model(model_dict, n_classes, version=None):
@@ -69,6 +70,7 @@ def _get_model_instance(name):
             "resunet": ResNet34Unet,
             "unet": unet,
             "pspnet": PSPNet,
+            "resAttUnet": ResAttnUnet
             # "unet3d": unet3d,
             # "xnet": xnet,
             # "segnet": segnet,
