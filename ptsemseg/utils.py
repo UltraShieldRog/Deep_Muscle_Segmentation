@@ -9,7 +9,6 @@ import numpy as np
 
 from collections import OrderedDict
 from skimage.draw import line_aa
-import skfmm
 
 
 def loadswc(filepath):
